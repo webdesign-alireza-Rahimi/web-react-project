@@ -25,10 +25,7 @@ const AboutSection = () => {
                 <img src={home1} alt="imgae for contact us" />
             </div>
           </div>
-         
      )
-   
-
 }
 
 
