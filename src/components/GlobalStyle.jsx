@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background: #1b1b1b ;
+        font-family : 'Inter' , sans-serif ; 
     }
 
     button {
@@ -20,13 +21,13 @@ const GlobalStyle = createGlobalStyle`
         background: transparent;
         border: 3px solid #23d997;
         color : white ; 
+        font-family : 'Inter' , sans-serif ; 
+
 
         &:hover {
             background: #23d997;
         }
         transition: all 0.4s ease;
-
-
     }
 
     .title {
@@ -57,14 +58,8 @@ const GlobalStyle = createGlobalStyle`
             font-weight: bold;
             color : #23d997 ; 
         }
-
-
     }
-
-    
-
 ` ; 
-
 
 
 export default GlobalStyle ; 
