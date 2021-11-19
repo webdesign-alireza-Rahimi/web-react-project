@@ -65,6 +65,7 @@ const Faq = styled(About)`
 
     h4 {
         padding : 2rem 1rem 2rem 0 ; 
+        font-size:1.7rem ; 
     }
 
     .answer {

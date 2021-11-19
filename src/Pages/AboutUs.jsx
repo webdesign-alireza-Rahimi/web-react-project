@@ -11,7 +11,6 @@ const AboutUs = () => {
        <ServiceSection />
        <FaqQuestion />
     </> 
-
 }
 
 export default AboutUs ; 
