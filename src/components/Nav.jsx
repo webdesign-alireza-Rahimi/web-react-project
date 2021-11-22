@@ -24,7 +24,7 @@ const Nav = () => {
            </ul>
        </NavStyle>
    ) ; 
-}
+}   
 
 const  NavStyle = styled.nav`
     

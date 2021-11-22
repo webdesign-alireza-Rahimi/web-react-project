@@ -8,7 +8,7 @@ import money from '../img/money.svg' ;
 import home2 from '../img/home2.png' ; 
 
 
-import { About , Description , Hide , Image } from '../styles';
+import { About , Description , Image } from '../styles';
 import styled from 'styled-components';
 
 
@@ -71,7 +71,6 @@ const Cards = styled.div`
       display : flex ; 
       flex-wrap: wrap ; 
 `;
-
 
 const Card = styled.div`
    flex-basis: 20rem ; 
