@@ -3,6 +3,10 @@ import {React , useState , useEffect} from "react" ;
 import styled from "styled-components" ; 
 import {useHistory} from "react-router-dom" ; 
 import { MovieState } from "../movieState";
+// framer motion
+import { motion } from 'framer-motion';
+import {animationPage} from "../animation" ; 
+
 
 const MovieDetails = ()=>{
       
@@ -20,7 +24,7 @@ const MovieDetails = ()=>{
 
 
     return  (
-        <> { movie && (
+        <motion.div exit="exit" variants={animationPage} animate="show" initial="hidden" > { movie && (
        <Details>
         <HeadLine>
             <h2>{movie.title}</h2>
@@ -37,7 +41,7 @@ const MovieDetails = ()=>{
         </ImageDisplay>
         </Details>
        ) }
-        </>
+        </motion.div>
         ) ; 
 };
 

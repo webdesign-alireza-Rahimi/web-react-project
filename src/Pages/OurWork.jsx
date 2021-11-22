@@ -7,10 +7,15 @@ import theracer from "../img/theracer-small.png" ;
 
 import { Link } from "react-router-dom";
 
+// framer motion
+import { motion } from 'framer-motion';
+import {animationPage} from "../animation" ; 
+
+
 const OurWork = () => {
 
     return (
-        <Work>
+        <Work exit="exit" variants={animationPage} animate="show" initial="hidden">
         <Movei>
             <h1 className="title">The Athlete</h1>
             <div className="under-line"></div>
@@ -36,7 +41,7 @@ const OurWork = () => {
     ) ; 
 }
 
-const Work = styled.div`
+const Work = styled(motion.div)`
    padding: 5rem 10rem ;
    min-height: 100vh;
    margin: auto;
