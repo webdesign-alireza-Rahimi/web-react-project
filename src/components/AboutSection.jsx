@@ -8,9 +8,9 @@ import { About ,Description , Image , Hide } from "../styles" ;
 import { motion } from "framer-motion" ; 
 import {photoAnim, titleAnim } from "../animation" ; 
 import { fade } from '../animation';
+import {Wave} from "../components/Wave" ; 
 
 const AboutSection = () => {
-
 
      return(
           <About>
@@ -30,6 +30,7 @@ const AboutSection = () => {
             <Image>
                 <motion.img variants={photoAnim} img src={home1} alt="imgae for contact us" />
             </Image>
+            <Wave />
           </About>
      )
 }
