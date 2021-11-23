@@ -6,38 +6,29 @@ import home1 from '../img/home1.png' ;
 import { About ,Description , Image , Hide } from "../styles" ; 
 // Framer motion 
 import { motion } from "framer-motion" ; 
-
+import {photoAnim, titleAnim } from "../animation" ; 
+import { fade } from '../animation';
 
 const AboutSection = () => {
-
-    const titleAnim = {
-         hidden : { opacity : 0} , 
-         show : {opacity : 1 , transition : {duration : 1}} , 
-    } ;
-
-    const container = {
-        hidden : {x : 100 } , 
-        show : {x : 0 , transition : {duration : 0.75 , staggerChildren : 1 , when: "afterChildren"}  } 
-    }
 
 
      return(
           <About>
             <Description>
-                <motion.div exit="exit" variants={container} animate="show" initial="hidden" className="title">
+                <motion.div  className="title">
                     <Hide>
-                       <motion.h2 variants={titleAnim}>We work to make</motion.h2>
+                       <motion.h2  variants={titleAnim} >We work to make</motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2  variants={titleAnim} >your <span>dreams</span> come</motion.h2>
+                        <motion.h2  variants={titleAnim}  >your <span>dreams</span> come</motion.h2>
                     </Hide>
-                    <Hide><motion.h2 variants={titleAnim} >true.</motion.h2></Hide>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, quia.</p>
-                    <button className="contact-us">Contact Us</button>
+                    <Hide><motion.h2  variants={titleAnim} >true.</motion.h2></Hide>
+                    <motion.p variants={fade}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, quia.</motion.p>
+                    <motion.button variants={fade}className="contact-us">Contact Us</motion.button>
                 </motion.div>
             </Description>
             <Image>
-                <img src={home1} alt="imgae for contact us" />
+                <motion.img variants={photoAnim} img src={home1} alt="imgae for contact us" />
             </Image>
           </About>
      )
