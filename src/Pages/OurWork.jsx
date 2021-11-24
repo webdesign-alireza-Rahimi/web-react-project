@@ -9,18 +9,26 @@ import { Link } from "react-router-dom";
 
 // framer motion
 import { motion } from 'framer-motion';
-import {animationPage} from "../animation" ; 
+import {animationPage ,sliderContainer ,sliderAnim  , fade , photoAnim , lineAnim} from "../animation" ; 
 
 
 const OurWork = () => {
 
     return (
-        <Work exit="exit" variants={animationPage} animate="show" initial="hidden">
+        <Work exit="exit" style={{background : "#fff"}} variants={animationPage} animate="show" initial="hidden">
+            <motion.div variants={sliderContainer} >
+            <Frame1 variants={sliderAnim}></Frame1>
+            <Frame2 variants={sliderAnim}></Frame2>
+            <Frame3 variants={sliderAnim}></Frame3>
+            <Frame4 variants={sliderAnim}></Frame4>
+            </motion.div>
         <Movei>
-            <h1 className="title">The Athlete</h1>
-            <div className="under-line"></div>
+            <motion.h1 variants={fade}  className="title">The Athlete</motion.h1>
+            <motion.div  variants={lineAnim} className="under-line"></motion.div>
             <Link to="/work/the-athlete">
-            <img src={athlete} alt="athlete" />
+                <Hide>
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+                </Hide>
             </Link>
         </Movei>
         <Movei>
@@ -61,11 +69,38 @@ const Movei = styled.div`
 
      .under-line {
          width: 100%;
-         background : #cccccc ; 
+         background : #573838; 
          height: 0.5rem;
          margin-bottom: 3rem;
      }
 ` ; 
+
+const Hide = styled.div`
+       overflow : hidden ; 
+` ; 
+
+
+const Frame1 = styled(motion.div)`
+   position : fixed ; 
+   width : 100% ; 
+   height : 100vh ; 
+   top : 10% ; 
+   left : 0 ; 
+   background: #814d4d;
+   z-index : 2 ; 
+` ;
+
+const Frame2 = styled(Frame1)`
+    background : #b68686 ; 
+` ; 
+
+const Frame3 = styled(Frame1)`
+    background : #8e60b4 ; 
+` ; 
+
+const Frame4 = styled(Frame1)`
+    background : #3a9728 ; 
+` ;
 
 
 export default OurWork ; 
