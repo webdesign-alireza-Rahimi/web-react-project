@@ -54,7 +54,7 @@ const Work = styled(motion.div)`
    min-height: 100vh;
    margin: auto;
    overflow: hidden;
-` ; 
+`; 
 
 const Movei = styled.div`
      padding-bottom: 10rem;
@@ -73,7 +73,7 @@ const Movei = styled.div`
          height: 0.5rem;
          margin-bottom: 3rem;
      }
-` ; 
+`; 
 
 const Hide = styled.div`
        overflow : hidden ; 

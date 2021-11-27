@@ -9,13 +9,17 @@ import home2 from '../img/home2.png' ;
 
 
 import { About , Description , Image } from '../styles';
-import styled from 'styled-components';
+import styled from 'styled-components'; 
+import {fade , scrollReveal} from "../animation" ; 
+import {useScroll} from "../useScroll" ; 
 
 
 const ServiceSection = () =>{
+   
+    const [element , controls] = useScroll() ;  
 
     return( 
-        <Services >
+        <Services exit="exit" ref={element} variants={scrollReveal} animate={controls} initial="hidden">
             <Description>
                 <Cards>
                 <Card>
@@ -23,6 +27,7 @@ const ServiceSection = () =>{
                         <img src={clock} alt="icon" />
                         <h3>Efficient</h3>
                     </div>
+                    
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, blanditiis.</p>
                 </Card>
                 <Card>
