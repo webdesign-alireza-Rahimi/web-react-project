@@ -10,6 +10,7 @@ import MovieDetail from "./Pages/MovieDetail" ;
 
 import {AnimatePresence} from "framer-motion" ; 
 import {useLocation} from "react-router-dom" ; 
+import ScrollToTop from "./components/ScrollToTop" ; 
 
 function App() {
   const location = useLocation() ; 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
     <GlobalStyle />
+    <ScrollToTop/>
     <Nav />
     <AnimatePresence exitBeforeEnter>
     <Switch location={location} key={location.pathname}>
