@@ -10,9 +10,16 @@ import { Link } from "react-router-dom";
 // framer motion
 import { motion } from 'framer-motion';
 import {animationPage ,sliderContainer ,sliderAnim  , fade , photoAnim , lineAnim} from "../animation" ; 
+import {useInView} from "react-intersection-observer" ; 
+import { useAnimation } from "framer-motion";
+import {useScroll} from "../useScroll" ; 
 
 
 const OurWork = () => {
+
+    const [element , controls] = useScroll() ; 
+    const [element2 , controls2] = useScroll() ; 
+    
 
     return (
         <Work exit="exit" style={{background : "#fff"}} variants={animationPage} animate="show" initial="hidden">
@@ -31,16 +38,16 @@ const OurWork = () => {
                 </Hide>
             </Link>
         </Movei>
-        <Movei>
+        <Movei  ref={element} variants={fade} initial="hidden" animate={controls}>
             <h1 className="title">The Theracer</h1>
-            <div className="under-line"></div>
+            <motion.div variants={lineAnim} className="under-line"></motion.div>
             <Link to="/work/the-racer"> 
             <img src={theracer} alt="athlete" />
             </Link>
         </Movei>
-        <Movei>
+        <Movei  ref={element2} variants={fade} initial="hidden" animate={controls2}>
             <h1 className="title">Good Times</h1>
-            <div className="under-line"></div>
+            <motion.div variants={lineAnim} className="under-line"></motion.div>
             <Link to="/work/good-times">
             <img src={goodTimes} alt="athlete" />
             </Link>
@@ -56,7 +63,7 @@ const Work = styled(motion.div)`
    overflow: hidden;
 `; 
 
-const Movei = styled.div`
+const Movei = styled(motion.div)`
      padding-bottom: 10rem;
      img{
          width : 100% ;

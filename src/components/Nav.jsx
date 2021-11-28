@@ -35,6 +35,9 @@ const  NavStyle = styled.nav`
     padding: 1rem 10rem;
     margin: auto;
     background : #282828 ; 
+    z-index : 10 ; 
+    position : sticky ; 
+    top : 0 ; 
 
     #logo {
         color : white ; 
